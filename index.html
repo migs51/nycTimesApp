@@ -7,13 +7,13 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="style.css"/>
-    
-   
+
+
 
 </head>
 <body>
 
-    
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
         <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/simplex/bootstrap.min.css" rel="stylesheet"
@@ -29,28 +29,28 @@
     <div class="card mb-3">
         <h3 class="card-header"><i class="fas fa-search"></i>Search Parameters: </h3>
         <div class="card-body">
-        <form>
+        <form name="searchKey" action="/action_page.php" method="POST">
             <fieldset>
                 <div class="form-group">
                     <label for="searchTerm">Search Term:</label>
-                    <input type="text" class="form-control" id="searchTerm" placeholder=" ">
+                    <input type="text" class="form-control" id="searchTerm" name="keyword" required>
                 </div>
+            </fieldset>
                 <div class="form-group">
                     <label for="numRecords">Number of Records to Retrieve: </label>
-                    <input type="text" class="form-control" id="numRecords" aria-describedby=" "
-                        placeholder=" ">
+                    <input type="range" class="form-control" id="numRecords" min="1" max="50" required>
                 </div>
                 <div class="form-group">
                     <label for="startYear">Start Year (Optional): </label>
-                    <input type="text" class="form-control" id="startYear" placeholder=" ">
+                    <input type="number" name="startYear" class="form-control" id="range" min="1980" max="2020">
                 </div>
                 <div class="form-group">
                     <label for="endYear">End Year (Optional): </label>
-                    <input type="text" class="form-control" id="endYear" placeholder=" ">
+                    <input type="range" class="form-control" id="endYear" name="endYear" min="1980" max="2020">
                 </div>
             </fieldset>
-                <button id="search" type="button" class="btn btn-primary">Search</button>
-                <button id="clear" type="button" class="btn btn-primary">Clear</button>
+                <input type="button" class="btn btn-primary" value="Search">
+                <input type="reset" value="Clear" class="btn btn-primary">
         </form>
         </div>
     </div>
