@@ -1,5 +1,3 @@
-'https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20121230&end_date=20181230&api-key=[YOUR_API_KEY]' \
-  
 
 var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=";
 var searchTerm = $("#searchTerm").val();
@@ -12,10 +10,10 @@ var startDate = "&begin_date=" + $("#startDate").val();
 var endDate = "&end_date=" + $("#endDate").val();
 
 // combine all terms into final query URL
-// var queryUrl = url+searchTerm+startDate+endDate+apiKey;
+var queryUrl = url+searchTerm+startDate+endDate+apiKey;
 
-// Test API key
-
+// Test API key, returns articles about Obama between 01/01/2008 and 06/01/2008
+// var queryUrl = url + "Obama" + "&begin_date=20080101" + "&end_date=20080601" + apiKey;
 
 $.ajax({
     url: queryUrl ,
