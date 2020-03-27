@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Times Search App</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+
+
+
+</head>
+<body>
+
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
         <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/simplex/bootstrap.min.css" rel="stylesheet"
@@ -11,31 +22,31 @@
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron bg-light">
         <h1 class="display-3" style="text-align: center;"><i class="far fa-newspaper"></i> New York Times Search</h1>
     </div>
 
     <div class="card mb-3">
         <h3 class="card-header"><i class="fas fa-search"></i>Search Parameters: </h3>
         <div class="card-body">
-        <form>
+        <form name="searchKey" action="/action_page.php" method="POST">
             <fieldset>
                 <div class="form-group">
                     <label for="searchTerm">Search Term:</label>
-                    <input type="text" class="form-control" id="searchTerm" placeholder=" ">
+                    <input type="text" class="form-control" id="searchTerm" name="keyword" required>
                 </div>
+            </fieldset>
                 <div class="form-group">
                     <label for="numRecords">Number of Records to Retrieve: </label>
-                    <input type="text" class="form-control" id="numRecords" aria-describedby=" "
-                        placeholder=" ">
+                    <input type="number" class="form-control" id="numRecords" name="numRecords" min="1" max="50" required>
                 </div>
                 <div class="form-group">
-                    <label for="startYear">Start Date (Optional): </label>
-                    <input type="date" class="form-control" id="startDate" placeholder=" ">
+                    <label for="startDate">Start Year (Optional): </label>
+                    <input type="date" name="startDate" class="form-control" id="startDate">
                 </div>
                 <div class="form-group">
-                    <label for="endYear">End Date (Optional): </label>
-                    <input type="date" class="form-control" id="endDate" placeholder=" ">
+                    <label for="endDate">End Year (Optional): </label>
+                    <input type="date" class="form-control" id="endDate" name="endDate">
                 </div>
             </fieldset>
                 <button id="search" type="button" class="btn btn-primary">Search</button>
@@ -51,12 +62,20 @@
             </div>
         </div>
     </div>
-    <footer style="text-align: center;">© Breakout Room 4</footer>
+    <footer style="text-align: center; padding-top: 10px; padding-bottom: 10px;">© Breakout Room 4</footer>
 </div>
 
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="style.css"/>
+
+
+
+
+
+
+
+
+
+
     <!--jquery and bootstrap links-->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>

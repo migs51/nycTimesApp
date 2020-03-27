@@ -19,7 +19,7 @@ $("#search").on("click", function (event) {
     // Start and end date must be a string in the format yyyymmdd
     var start = $("#startDate").val();
     var end = $("#endDate").val();
-
+console.log(start.typeOf());
     // removing dashes and putting date in yyyymmdd
     start = start[0] + start[1] + start[2] + start[3] + start[5] + start[6] + start[8] + start[9];
     var startDate = "&begin_date=" + start;
