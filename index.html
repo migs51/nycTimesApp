@@ -7,13 +7,13 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="style.css"/>
-    
-   
+
+
 
 </head>
 <body>
 
-    
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
         <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/simplex/bootstrap.min.css" rel="stylesheet"
@@ -22,35 +22,40 @@
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron bg-light">
         <h1 class="display-3" style="text-align: center;"><i class="far fa-newspaper"></i> New York Times Search</h1>
     </div>
 
     <div class="card mb-3">
         <h3 class="card-header"><i class="fas fa-search"></i>Search Parameters: </h3>
         <div class="card-body">
-        <form>
+        <form name="searchKey" action="/action_page.php" method="POST">
             <fieldset>
                 <div class="form-group">
                     <label for="searchTerm">Search Term:</label>
-                    <input type="text" class="form-control" id="searchTerm" placeholder=" ">
+                    <input type="text" class="form-control" id="searchTerm" name="keyword" required>
                 </div>
+            </fieldset>
                 <div class="form-group">
                     <label for="numRecords">Number of Records to Retrieve: </label>
-                    <input type="text" class="form-control" id="numRecords" aria-describedby=" "
-                        placeholder=" ">
+                    <input type="number" class="form-control" id="numRecords" name="numRecords" min="1" max="50" required>
                 </div>
                 <div class="form-group">
                     <label for="startYear">Start Year (Optional): </label>
-                    <input type="text" class="form-control" id="startYear" placeholder=" ">
+                    <input type="date" name="startYear" class="form-control" id="range">
                 </div>
                 <div class="form-group">
                     <label for="endYear">End Year (Optional): </label>
-                    <input type="text" class="form-control" id="endYear" placeholder=" ">
+                    <input type="date" class="form-control" id="endYear" name="endYear">
                 </div>
             </fieldset>
+<<<<<<< HEAD
                 <button id="search" type="button" class="btn btn-primary">Search</button>
                 <button id="clear" type="reset" class="btn btn-primary">Clear</button>
+=======
+                <input type="button" class="btn btn-primary" value="Search">
+                <input type="reset" value="Clear" class="btn btn-primary">
+>>>>>>> UIfeatureBranch
         </form>
         </div>
     </div>
@@ -62,7 +67,7 @@
             </div>
         </div>
     </div>
-    <footer style="text-align: center;">© Breakout Room 4</footer>
+    <footer style="text-align: center; padding-top: 10px; padding-bottom: 10px;">© Breakout Room 4</footer>
 </div>
 
 
