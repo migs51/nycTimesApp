@@ -15,20 +15,45 @@ $("#search").on("click", function (event) {
     event.preventDefault();
 
     var searchTerm = $("#searchTerm").val();
+    var pages = $("#numRecords").val();
 
     // Start and end date must be a string in the format yyyymmdd
     var start = $("#startDate").val();
     var end = $("#endDate").val();
-console.log(start.typeOf());
-    // removing dashes and putting date in yyyymmdd
-    start = start[0] + start[1] + start[2] + start[3] + start[5] + start[6] + start[8] + start[9];
-    var startDate = "&begin_date=" + start;
-    
-    end = end[0] + end[1] + end[2] + end[3] + end[5] + end[6] + end[8] + end[9];
-    var endDate = "&end_date=" + end;
 
-    // combine all terms into final query URL
-    var queryUrl = url + searchTerm + startDate + endDate + apiKey;
+    if (start !== "" && end == "") {
+        // removing dashes and putting date in yyyymmdd
+        start = start[0] + start[1] + start[2] + start[3] + start[5] + start[6] + start[8] + start[9];
+        var startDate = "&begin_date=" + start;
+
+        // combine all terms into final query URL
+        var queryUrl = url + searchTerm + startDate + apiKey;
+    }
+    else if (start == "" && end !== ""){
+        // removing dashes and putting date in yyyymmdd
+        end = end[0] + end[1] + end[2] + end[3] + end[5] + end[6] + end[8] + end[9];
+        var endDate = "&end_date=" + end;
+
+        // combine all terms into final query URL
+        var queryUrl = url + searchTerm + endDate + apiKey;
+    }
+    else if (start !== "" && end !== ""){
+        // removing dashes and putting date in yyyymmdd
+        start = start[0] + start[1] + start[2] + start[3] + start[5] + start[6] + start[8] + start[9];
+        var startDate = "&begin_date=" + start;
+        
+        end = end[0] + end[1] + end[2] + end[3] + end[5] + end[6] + end[8] + end[9];
+        var endDate = "&end_date=" + end;
+
+        // combine all terms into final query URL
+        var queryUrl = url + searchTerm + startDate + endDate + apiKey;
+    }
+    // in this case, no dates were entered
+    else {
+        var queryUrl = url + searchTerm + apiKey;
+    }
+
+
 
     $.ajax({
         url: queryUrl,
