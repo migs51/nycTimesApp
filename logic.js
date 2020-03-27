@@ -1,8 +1,10 @@
 
-var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=";
+var url = "hhttps://api.nytimes.com/svc/search/v2/articlesearch.json";
 var searchTerm = $("#searchTerm").val();
 var apiKey = "&api-key=wDG96UJnAnivLybkePfjNNA0CNJ1dhrm";
-
+var createRow = function (data) {
+  var topArticles = $("articles");
+}
 
 
 // Start and end date must be a string in the format yyyymmdd
