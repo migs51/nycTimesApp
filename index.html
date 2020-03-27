@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+        <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/simplex/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-cRAmF0wErT4D9dEBc36qB6pVu+KmLh516IoGWD/Gfm6FicBbyDuHgS4jmkQB8u1a" crossorigin="anonymous">
     <title>New York Times App</title>
 </head>
 <body>
@@ -12,7 +16,7 @@
     </div>
 
     <div class="card mb-3">
-        <h3 class="card-header">Search Parameters: </h3>
+        <h3 class="card-header"><i class="fas fa-search"></i>Search Parameters: </h3>
         <div class="card-body">
         <form>
             <fieldset>
@@ -36,10 +40,19 @@
                     <label for="endYear">End Year (Optional): </label>
                     <input type="text" class="form-control" id="endYear" placeholder="Password">
                 </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="clear" class="btn btn-primary">Clear</button>
             </fieldset>
         </form>
         </div>
-    
+
+        <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+            <div class="card-header"><i class="far fa-calendar-alt"></i>Top Articles</div>
+            <div class="card-body">
+                <p class="card-text"></p>
+            </div>
+        </div>
+
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="style.css"/>
